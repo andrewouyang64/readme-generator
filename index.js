@@ -1,25 +1,18 @@
 // TODO: Include packages needed for this application
-const fs= require('fs');
 const inquirer = require('inquirer');
+const fs= require('fs');
 
 // TODO: Create an array of questions for user input
-const questions = [title, descrition, installation, usage, license,
-    contribution, github, email, test];
+//const questions = ['title', 'description', 'installation', 'usage', 'license',
+    //'contribution', 'email', 'github', 'test'];
 
-const readMe = (answers)=> 
-`#${Title}
+const readMe = ({title, description, installation, usage, license, contribution, email, github, test}) => 
+`# ${title}
 
 ## Description
-${Descrition}
+${description}
 
 ## Table of Contents (Optional)
-
-If your README is long, add a table of contents to make it easy for users to find what they need.
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
 
 ## Installation
 ${installation}
@@ -27,24 +20,14 @@ ${installation}
 ## Usage
 ${usage}
 
-## Credits
-${credits}
-
 ## License
-${licese}
+${license}
 
 ## Badges
-${badges}
-
-![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)
 
 ## How to Contribute
-${how-to-contribute}
-${contact}
-
-If you created an application or package and would like other developers to 
-contribute it, you can include guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) 
-is an industry standard, but you can always write your own if you'd prefer.
+${contribution}
+${email}
 
 ## Github username
 ${github}
@@ -62,7 +45,7 @@ inquirer
   {
     type: 'input',
       name: 'description',
-      message: 'What is the descrition of the application?',
+      message: 'What is the description of the application?',
   },
 
   {
@@ -78,7 +61,7 @@ inquirer
   {
     type: 'list',
     message: 'What is the licese?',
-    name: 'licese',
+    name: 'license',
     choices: ['none', 'MIT', 'GNU GPL V3'],
   },
   {
@@ -104,17 +87,16 @@ inquirer
   },
     
   ])
+  .then((annswers) => {
+    const readMeContent = readMe(annswers);
 
-  .then((answers) => {
-    const readMeContent = readMe(answers);
-
-    fs.writeFile('README.md', readMeContent, (err) =>
-      err ? console.log(err) : console.log('Successfully created README.md!')
+    fs.writeFile('README1.md', readMeContent, (err) =>
+      err ? console.log(err) : console.log('Successfully created README1.md!')
     );
   });
 
 // TODO: Create a function to initialize app
-function init() {}
+//function init() {}
 
 // Function call to initialize app
-init();
+//init();
