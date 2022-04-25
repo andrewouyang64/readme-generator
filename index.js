@@ -2,11 +2,25 @@
 const inquirer = require('inquirer');
 const fs= require('fs');
 
+function renderLicenseBadge (license) {
+    if (license==='MIT') {
+      let badge = "https://img.shields.io/badge/License-MIT-yellow.svg";
+      let licenseLink = "https://choosealicense.com/licenses/mit/";
+    }
+    else if (license==='GNU GPL V3') {
+      let badge = "https://img.shields.io/badge/License-GPLv3-blue.svg";
+      let licenseLink = "https://choosealicense.com/licenses/agpl-3.0/";
+    }
+  else { let badge = "";
+         let licenseLink = "";
+  }
+    return
+  }
 // TODO: Create an array of questions for user input
 //const questions = ['title', 'description', 'installation', 'usage', 'license',
-    //'contribution', 'email', 'github', 'test'];
+    //'badge', 'linenseLink', 'contribution', 'email', 'github', 'test'];
 
-const readMe = ({title, description, installation, usage, license, contribution, email, github, test}) => 
+const readMe = ({title, description, installation, usage, license, badge, licenseLink, contribution, email, github, test}) => 
 `# ${title}
 
 ## Description
@@ -20,10 +34,14 @@ ${installation}
 ## Usage
 ${usage}
 
+![alt text](assets/images/screenshot.png)
+
 ## License
 ${license}
 
 ## Badges
+${badge}
+Please see the license condition: ${licenseLink}
 
 ## How to Contribute
 ${contribution}
@@ -88,13 +106,13 @@ inquirer
     
   ])
   .then((annswers) => {
-    const readMeContent = readMe(annswers);
+    
+    const readMeContent = readMe(annswers, renderLicenseBadge);
 
     fs.writeFile('README1.md', readMeContent, (err) =>
       err ? console.log(err) : console.log('Successfully created README1.md!')
     );
-  });
-
+  }); 
 // TODO: Create a function to initialize app
 //function init() {}
 

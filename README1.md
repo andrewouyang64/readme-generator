@@ -1,27 +1,31 @@
-# Readme file generator
+# Readme File Generator
 
 ## Description
-To generate a readme file by giving anwswers to prompt questions  
+To create a readme file by using node.js under the command line with inputs to prompted questions.
 
 ## Table of Contents (Optional)
 
 ## Installation
-To type "node index.js" under the command line
+To type "node index.js" under command line.
 
 ## Usage
-To generate a readme file automatically
+Under node.js to generate a readme file automatically.
+
+![alt text](assets/images/screenshot.png)
 
 ## License
 MIT
 
 ## Badges
+undefined
+Please see the license condition: undefined
 
 ## How to Contribute
-To contact me by email
+Please refer to Contributor Convenant
 andrew.ouyang@hotmail
 
 ## Github username
-andrewouyang64
+Andrewouyang64
 
 ## Tests
-none
+None
