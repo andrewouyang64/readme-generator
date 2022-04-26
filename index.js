@@ -28,6 +28,12 @@ ${description}
 
 ## Table of Contents (Optional)
 
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [License](#license)
+
+
 ## Installation
 ${installation}
 
@@ -39,12 +45,17 @@ ${usage}
 ## License
 ${license}
 
+![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)
+
+
 ## Badges
 ${badge}
-Please see the license condition: ${licenseLink}
+Please see the license condition: 
+${licenseLink}
 
 ## How to Contribute
 ${contribution}
+
 ${email}
 
 ## Github username
