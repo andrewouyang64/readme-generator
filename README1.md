@@ -1,7 +1,7 @@
 # Readme File Generator
 
 ## Description
-To creadte a readme file by using node.js with inputs to prompted questions in command line.
+To use node.js to create a readme file by giving inputs to the prompted questions in command line console.
 
 ## Table of Contents (Optional)
 
@@ -12,33 +12,32 @@ To creadte a readme file by using node.js with inputs to prompted questions in c
 
 
 ## Installation
-To type "node index.js" in command line
+To run npm install, then execute the app by typing "node index.js".
 
 ## Usage
-Under node.js to generate a readme file automactically
+To generate a professional readme file automactically by just answering prompted questions.
 
 ![Screenshot](assets/images/screenshot.png)
 
 ## Credits
-Andrew, Javascript, node.js, Trilogy
+Andrew Ouyang, Javascript, node.js and Trilogy
 
 ## License
 MIT
 
-![MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]
 
-## Badges
-undefined
 Please see the license condition: 
-undefined
+(https://opensource.org/licenses/MIT)
 
 ## How to Contribute
 Please refer to Contributor Convenant
 
+My email: 
 andrew.ouyang@hotmail.com
 
 ## Github username
-Andrewouyang64
+andrewouyang64
 
 ## Tests
 None

@@ -1,20 +1,6 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge (license) {
-  if (license='MIT') {
-    var badge = 'https://img.shields.io/badge/License-MIT-yellow.svg'
-    var licenseLink = 'https://choosealicense.com/licenses/mit/'
-  }
-  else if (license='GNU GPL V3') {
-    badge = 'https://img.shields.io/badge/License-GPLv3-blue.svg'
-    licenseLink = 'https://choosealicense.com/licenses/agpl-3.0/'
-  }
-else { badge = ''
-       licenseLink = ''
-}
-  console.log(badge);
-  return
-}
+function renderLicenseBadge(license) {}
 
 
 // TODO: Create a function that returns the license link

@@ -2,29 +2,31 @@
 const inquirer = require('inquirer');
 const fs= require('fs');
 
-function renderLicenseBadge (license) {
-    if (license==='MIT') {
-      let badge = "https://img.shields.io/badge/License-MIT-yellow.svg";
-      let licenseLink = "https://choosealicense.com/licenses/mit/";
-    }
-    else if (license==='GNU GPL V3') {
-      let badge = "https://img.shields.io/badge/License-GPLv3-blue.svg";
-      let licenseLink = "https://choosealicense.com/licenses/agpl-3.0/";
-    }
-  else { let badge = "";
-         let licenseLink = "";
-  }
-    return
-  }
-// TODO: Create an array of questions for user input
-//const questions = ['title', 'description', 'installation', 'usage', 'license',
-    //'badge', 'linenseLink', 'contribution', 'email', 'github', 'test'];
+// A function for markdown README file content
+function readMe (data) {
+let badge = '';
+let licenseLink = '';
+switch (data.license) {
+    case 'MIT':
+        badge = '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]';
+        licenseLink = '(https://opensource.org/licenses/MIT)'       
+        break;
+    case 'GNU GPL V3':
+        badge = '[![License: GNU GPL V3](https://img.shields.io/badge/License-GPLv3-blue.svg)]';
+        licenseLink = '(https://choosealicense.com/licenses/agpl-3.0)';
+        break;
+    case 'Mozilla':
+        badge = '[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)]';
+        licenseLink = '(https://www.mozilla.org/en-US/MPL/2.0/)'
+        break;
+        default: console.error('Error, choose one license');
+} 
 
-const readMe = ({title, description, installation, usage, credits, license, badge, licenseLink, contribution, email, github, test}) => 
-`# ${title}
+readMeContent = 
+`# ${data.title}
 
 ## Description
-${description}
+${data.description}
 
 ## Table of Contents (Optional)
 
@@ -35,37 +37,39 @@ ${description}
 
 
 ## Installation
-${installation}
+${data.installation}
 
 ## Usage
-${usage}
+${data.usage}
 
 ![Screenshot](assets/images/screenshot.png)
 
 ## Credits
-${credits}
+${data.credits}
 
 ## License
-${license}
+${data.license}
 
-![MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
-
-## Badges
 ${badge}
+
 Please see the license condition: 
 ${licenseLink}
 
 ## How to Contribute
-${contribution}
+${data.contribution}
 
-${email}
+My email: 
+${data.email}
 
 ## Github username
-${github}
+${data.github}
 
 ## Tests
-${test}`;
+${data.test}`
+return readMeContent;
+};
 
+// prompting all questions with inquirer module
 inquirer
   .prompt([
     {
@@ -100,7 +104,7 @@ inquirer
     type: 'list',
     message: 'What is the licese?',
     name: 'license',
-    choices: ['none', 'MIT', 'GNU GPL V3'],
+    choices: ['none', 'MIT', 'GNU GPL V3','Mozilla'],
   },
   {
     type: 'input',
@@ -125,16 +129,12 @@ inquirer
   },
     
   ])
-  .then((annswers) => {
-    
-    const readMeContent = readMe(annswers, renderLicenseBadge);
 
-    fs.writeFile('README1.md', readMeContent, (err) =>
+  // Get input data and generate README1.md file
+  .then((data) => {
+    
+    fs.writeFile('README1.md', readMe(data), (err) =>
       err ? console.log(err) : console.log('Successfully created README1.md!')
     );
   }); 
-// TODO: Create a function to initialize app
-//function init() {}
 
-// Function call to initialize app
-//init();
