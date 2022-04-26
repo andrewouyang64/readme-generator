@@ -6,6 +6,6 @@
 then follow the prompt questuons to input answers. Once all answers are given a completed
 professional README file is generated.
 
-- The demo link: 
+- The demo link: please open readme1.md file
 
-- The screenshots:
+- The screenshots: ![Screenshot](assets/images/screenshot.png)
