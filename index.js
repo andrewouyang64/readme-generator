@@ -20,7 +20,7 @@ function renderLicenseBadge (license) {
 //const questions = ['title', 'description', 'installation', 'usage', 'license',
     //'badge', 'linenseLink', 'contribution', 'email', 'github', 'test'];
 
-const readMe = ({title, description, installation, usage, license, badge, licenseLink, contribution, email, github, test}) => 
+const readMe = ({title, description, installation, usage, credits, license, badge, licenseLink, contribution, email, github, test}) => 
 `# ${title}
 
 ## Description
@@ -40,13 +40,15 @@ ${installation}
 ## Usage
 ${usage}
 
-![alt text](assets/images/screenshot.png)
+![Screenshot](assets/images/screenshot.png)
+
+## Credits
+${credits}
 
 ## License
 ${license}
 
-![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)
-
+![MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 ## Badges
 ${badge}
@@ -87,6 +89,13 @@ inquirer
       name: 'usage',
       message: 'What is the usage of the application?',
   },
+
+  {
+    type: 'input',
+      name: 'credits',
+      message: 'Credits to',
+  },
+
   {
     type: 'list',
     message: 'What is the licese?',

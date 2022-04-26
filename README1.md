@@ -1,7 +1,7 @@
 # Readme File Generator
 
 ## Description
-To create a readme file by using node.js under command line with inputs to prompted questions.
+To creadte a readme file by using node.js with inputs to prompted questions in command line.
 
 ## Table of Contents (Optional)
 
@@ -12,18 +12,20 @@ To create a readme file by using node.js under command line with inputs to promp
 
 
 ## Installation
-To type "node index.js" under command line.
+To type "node index.js" in command line
 
 ## Usage
-Under node.js to generate a reame file automatically.
+Under node.js to generate a readme file automactically
 
-![alt text](assets/images/screenshot.png)
+![Screenshot](assets/images/screenshot.png)
+
+## Credits
+Andrew, Javascript, node.js, Trilogy
 
 ## License
 MIT
 
-![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)
-
+![MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 ## Badges
 undefined
