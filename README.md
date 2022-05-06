@@ -6,6 +6,8 @@
 then follow the prompt questuons to input answers. Once all answers are given a completed
 professional README file is generated.
 
-- The demo link: please open readme1.md file
+- The video demo link: https://watch.screencastify.com/v/GUw6mBVON6W5eGScanFn
 
 - The screenshots: ![Screenshot](assets/images/screenshot.png)
+
+- Demo readme file: Please opne README1.md in my reporsitory. https://github.com/andrewouyang64
